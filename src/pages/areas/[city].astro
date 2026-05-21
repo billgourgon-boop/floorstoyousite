@@ -6,7 +6,6 @@ import ServiceGrid from '../../components/ServiceGrid.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import FAQ from '../../components/FAQ.astro';
-import EstimateForm from '../../components/EstimateForm.astro';
 import GoogleMap from '../../components/GoogleMap.astro';
 import BreadcrumbSchema from '../../components/schema/BreadcrumbSchema.astro';
 import FAQSchema from '../../components/schema/FAQSchema.astro';
@@ -124,7 +123,6 @@ const areaFaqs = [
  <Testimonials />
  <FAQ faqs={areaFaqs} heading={`${a.city} Flooring FAQ`} />
  <CtaBand headline={`Get A Free ${a.city} Flooring Estimate Today`} subline={`Floors To You OKC has installed in hundreds of ${a.city} homes - yours is next.`} />
- <EstimateForm />
 
  <Fragment slot="head">
  <BreadcrumbSchema items={breadcrumbs} />

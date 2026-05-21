@@ -6,7 +6,6 @@ import AreaGrid from '../../components/AreaGrid.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import FAQ from '../../components/FAQ.astro';
-import EstimateForm from '../../components/EstimateForm.astro';
 import Gallery from '../../components/Gallery.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
 import { productsByService } from '../../data/products';
@@ -88,7 +87,6 @@ const breadcrumbs = [
  <Testimonials />
  <FAQ faqs={s.faqs} heading={`${s.shortName} Questions OKC Homeowners Ask`} />
  <CtaBand headline={`Get A Free ${s.shortName} Estimate Today`} subline="In-home measure, written quote, and next-day install on in-stock material." />
- <EstimateForm />
 
  <Fragment slot="head">
  <BreadcrumbSchema items={breadcrumbs} />

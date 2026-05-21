@@ -25,8 +25,8 @@ export const site = {
     facebook: 'https://www.facebook.com/profile.php?id=100088814169249',
   },
   promises: [
+    'Lowest price guaranteed - we beat any written quote',
     'We bring the showroom to you',
-    'Samples matched to your light and trim',
     'Next-day install on in-stock material',
     '0% APR financing for 24 months',
     'We handle prep, install, baseboard & cleanup',

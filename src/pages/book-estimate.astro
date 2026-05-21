@@ -1,55 +1,72 @@
 ---
 import FunnelLayout from '../layouts/FunnelLayout.astro';
 
-const title = 'Pick Your Appointment Time · Floors To You OKC';
-const description = 'Schedule your free in-home flooring estimate. Pick the time that works best for you.';
+const title = 'Grab Your Appointment Time · Floors To You OKC';
+const description = 'Pick the time that works for you. Free in-home flooring estimate across the OKC metro - lowest price guaranteed.';
 ---
 <FunnelLayout title={title} description={description}>
-  {/* HERO + CALENDAR - calendar visible immediately on mobile, no preamble above it. */}
-  <section class="relative isolate overflow-hidden">
-    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-cream via-brand-50 to-cream"></div>
+
+  {/* ───────── HERO ───────── */}
+  <section class="relative isolate overflow-hidden bg-gradient-to-br from-cream via-brand-50 to-cream">
     <div class="absolute -top-32 -right-32 -z-10 h-[36rem] w-[36rem] rounded-full bg-brand-300/30 blur-3xl" aria-hidden="true"></div>
     <div class="absolute -bottom-32 -left-32 -z-10 h-[28rem] w-[28rem] rounded-full bg-brand-500/10 blur-3xl" aria-hidden="true"></div>
 
-    <div class="container-x pt-4 pb-12 lg:pt-10 lg:pb-20">
+    <div class="container-x pt-6 pb-12 lg:pt-12 lg:pb-16">
 
-      {/* Mobile: ultra-compact eyebrow + headline above the calendar.
-          Desktop: same block, centered, more breathing room. */}
-      <div class="max-w-3xl mx-auto text-center reveal">
-        <span class="inline-flex items-center gap-2 rounded-full bg-brand-500/10 ring-1 ring-brand-200 text-brand-700 px-3 py-1 text-[10px] uppercase tracking-[0.22em] font-bold">
-          <span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>
-          Final Step
-        </span>
-        <h1 class="mt-3 font-display font-bold leading-[1.02] tracking-tight text-2xl sm:text-3xl lg:text-5xl text-brand-800">
-          Pick a time that
-          <span class="block text-brand-500">works for you.</span>
+      {/* Centered hero copy - same voice as the survey landing page. */}
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur ring-1 ring-brand-200 px-4 py-1.5 mb-5 shadow-card">
+          <span class="text-brand-500 text-sm" aria-hidden>★★★★★</span>
+          <span class="text-xs sm:text-sm font-semibold text-brand-800">4.9 / 5 from 187+ OKC Homeowners</span>
+        </div>
+
+        <p class="text-[10px] sm:text-xs uppercase tracking-[0.28em] text-brand-700 font-bold mb-3">Final Step · You're Almost Done</p>
+
+        <h1 class="font-display font-bold leading-[1.02] tracking-tight text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-brand-800">
+          Grab Your Time.
+          <span class="block text-brand-500 mt-2">We'll Bring The Showroom.</span>
         </h1>
-        <p class="mt-3 text-sm sm:text-base text-ink/80 max-w-xl mx-auto">
-          Choose any open slot below. Your consultant will arrive on time with samples and measurements.
+
+        <p class="mt-5 text-base sm:text-lg text-ink/80 leading-relaxed max-w-2xl mx-auto">
+          Pick any open slot below. Your consultant will arrive on time with samples already matched to your light and trim.
         </p>
       </div>
 
-      {/* Calendar - visible immediately. min-h sized so the picker is in view on mobile. */}
-      <div class="mt-5 lg:mt-10 max-w-3xl mx-auto reveal reveal-d2">
-        <div class="rounded-xl2 bg-white ring-1 ring-brand-200 shadow-soft overflow-hidden p-2 sm:p-4">
-          <iframe
-            src="https://api.leadconnectorhq.com/widget/booking/1z4l2qv8WsN0G63StpPC"
-            style="width:100%;border:none;overflow:hidden;min-height:720px;display:block;background:#fff;"
-            scrolling="no"
-            id="1z4l2qv8WsN0G63StpPC"
-            title="Schedule your in-home flooring estimate"
-            loading="eager"
-            fetchpriority="high"
-          ></iframe>
+      {/* Calendar - centered, prominent. */}
+      <div id="calendar" class="mt-8 lg:mt-12 max-w-3xl mx-auto scroll-mt-20">
+        <div class="rounded-xl2 bg-white ring-2 ring-brand-500 shadow-soft overflow-hidden">
+          <div class="bg-gradient-to-r from-brand-700 to-brand-800 text-white px-5 py-3 sm:px-6 sm:py-4 text-center">
+            <div class="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-bold text-brand-300">Step 2 of 2 · Pick Your Time</div>
+            <div class="font-display text-lg sm:text-xl font-bold mt-0.5">Schedule Your Free In-Home Estimate</div>
+          </div>
+
+          <div class="p-2 sm:p-4">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/booking/1z4l2qv8WsN0G63StpPC"
+              style="width:100%;border:none;overflow:hidden;min-height:720px;display:block;background:#fff;"
+              scrolling="no"
+              id="1z4l2qv8WsN0G63StpPC"
+              title="Schedule your in-home flooring estimate"
+              loading="eager"
+              fetchpriority="high"
+            ></iframe>
+          </div>
         </div>
       </div>
+
+      {/* Horizontal value bullets - mirrors the book funnel. */}
+      <ul class="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-center sm:flex-wrap gap-3 sm:gap-x-8 sm:gap-y-3 text-sm sm:text-base text-ink/85 max-w-4xl mx-auto">
+        <li class="flex items-center gap-2 justify-center"><span class="text-brand-500 flex-none" aria-hidden>✓</span> Lowest price guaranteed - we beat any written quote</li>
+        <li class="flex items-center gap-2 justify-center"><span class="text-brand-500 flex-none" aria-hidden>✓</span> Samples matched to your light &amp; trim</li>
+        <li class="flex items-center gap-2 justify-center"><span class="text-brand-500 flex-none" aria-hidden>✓</span> 100% product &amp; labor guarantee</li>
+      </ul>
     </div>
   </section>
 
-  {/* GHL embed resize + booking detection */}
+  {/* GHL embed auto-resize */}
   <script src="https://link.msgsndr.com/js/form_embed.js" is:inline async></script>
 
-  {/* Confirmation modal - hidden by default, shown on successful booking */}
+  {/* ───────── CONFIRMATION MODAL ───────── */}
   <div
     id="fty-confirm"
     style="display:none;"
@@ -65,10 +82,10 @@ const description = 'Schedule your free in-home flooring estimate. Pick the time
         </svg>
       </div>
       <h2 id="fty-confirm-title" class="mt-6 font-display text-2xl sm:text-3xl font-bold text-brand-800">
-        Thank you!
+        You're booked!
       </h2>
       <p class="mt-3 text-ink/80 leading-relaxed">
-        Your free in-home flooring estimate is booked. We'll see you soon - check your inbox for confirmation details.
+        Your free in-home flooring estimate is locked in. Check your inbox for confirmation details - we'll see you soon.
       </p>
       <a
         href="/"
@@ -80,15 +97,15 @@ const description = 'Schedule your free in-home flooring estimate. Pick the time
     </div>
   </div>
 
+  {/* ───────── META PIXEL: Lead fires on land, Schedule fires on booking ───────── */}
   <script is:inline>
-    // Fire Lead pixel event on landing (user has already submitted the intake survey).
+    // PageView is fired automatically by FunnelLayout. Lead fires here because the
+    // visitor reached this page by submitting the intake survey on /book.
     if (typeof fbq === 'function') {
       fbq('track', 'Lead');
     }
 
     // Watch for booking-confirmed message from the GHL calendar widget.
-    // The widget posts many messages (resize, navigation, etc.) - we only fire on
-    // payloads that look like an appointment was actually booked.
     let ftyBookingHandled = false;
     window.addEventListener('message', (e) => {
       if (!e.origin || !/leadconnectorhq\.com|msgsndr\.com/.test(e.origin)) return;
@@ -96,7 +113,7 @@ const description = 'Schedule your free in-home flooring estimate. Pick the time
       const eventName = (d && (d.event || d.type || d.action)) || '';
       const payload = typeof d === 'string' ? d : JSON.stringify(d || {});
 
-      // Ignore resize / scroll / height-update chatter
+      // Ignore resize/scroll/height chatter from the iframe.
       if (/^(resize|height|scroll|navigate)/i.test(eventName)) return;
 
       const looksLikeBooking =
@@ -106,8 +123,8 @@ const description = 'Schedule your free in-home flooring estimate. Pick the time
 
       if (looksLikeBooking && !ftyBookingHandled) {
         ftyBookingHandled = true;
-        // Move to a distinct URL so Facebook attributes Schedule+PageView to the
-        // booking-confirmation step, separate from the Lead+PageView landing step.
+        // Push a distinct URL so Facebook attributes the Schedule+PageView pair
+        // to the confirmation step, separate from the Lead landing step.
         try { history.pushState({}, '', '/book-estimate/booked'); } catch (e) {}
         if (typeof fbq === 'function') {
           fbq('track', 'PageView');

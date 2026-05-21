@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import EstimateForm from '../components/EstimateForm.astro';
+import CtaBand from '../components/CtaBand.astro';
 import GoogleMap from '../components/GoogleMap.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import { site } from '../data/site';
@@ -36,7 +36,7 @@ import { site } from '../data/site';
  </div>
  </section>
 
- <EstimateForm />
+ <CtaBand />
 
  <Fragment slot="head">
  <BreadcrumbSchema items={[{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact' }]} />

@@ -6,7 +6,6 @@ import Testimonials from '../components/Testimonials.astro';
 import WhyUs from '../components/WhyUs.astro';
 import CtaBand from '../components/CtaBand.astro';
 import FAQ from '../components/FAQ.astro';
-import EstimateForm from '../components/EstimateForm.astro';
 import Gallery from '../components/Gallery.astro';
 import FAQSchema from '../components/schema/FAQSchema.astro';
 import { generalFaqs } from '../data/faqs';
@@ -36,12 +35,12 @@ const galleryItems = [
  </div>
 
  <h1 class="mb-5">
- <span class="block text-brand-800">The Showroom</span>
- <span class="block text-brand-500">Comes To You.</span>
+ <span class="block text-brand-800">Oklahoma City Flooring.</span>
+ <span class="block text-brand-500">Brought To Your Living Room.</span>
  </h1>
 
  <p class="text-lg md:text-xl text-ink/80 leading-relaxed mb-7 max-w-xl">
- We bring hundreds of samples to your home, match them to <strong class="text-brand-800">your light and your trim</strong>, and handle every inch of the install. Most homeowners walk in the next week and stop in their tracks.
+ We bring carpet, hardwood, LVP, laminate and tile to your home - matched to <strong class="text-brand-800">your light and your trim</strong>, then installed across the OKC metro in as little as 24 hours. The kind of floors friends ask about.
  </p>
 
  <div class="flex flex-wrap gap-3 mb-8">
@@ -50,7 +49,7 @@ const galleryItems = [
  </div>
 
  <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink/70">
- <li class="flex items-center gap-2"><span class="text-brand-500" aria-hidden>✓</span> We come to you - zero pressure</li>
+ <li class="flex items-center gap-2"><span class="text-brand-500" aria-hidden>✓</span> Lowest price guaranteed</li>
  <li class="flex items-center gap-2"><span class="text-brand-500" aria-hidden>✓</span> Installed in as little as 24 hours</li>
  <li class="flex items-center gap-2"><span class="text-brand-500" aria-hidden>✓</span> 0% APR for 24 months</li>
  </ul>
@@ -170,7 +169,6 @@ const galleryItems = [
  <Testimonials />
  <CtaBand />
  <FAQ faqs={generalFaqs} heading="Flooring FAQ Oklahoma City Homeowners Ask Most" />
- <EstimateForm />
 
  <Fragment slot="head">
  <FAQSchema faqs={generalFaqs} />
