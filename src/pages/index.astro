@@ -53,6 +53,50 @@ const galleryItems = [
  <li class="flex items-center gap-2"><span class="text-brand-500" aria-hidden>✓</span> Installed in as little as 24 hours</li>
  <li class="flex items-center gap-2"><span class="text-brand-500" aria-hidden>✓</span> 0% APR for 24 months</li>
  </ul>
+
+ {/* Happy families counter - animated count-up on viewport entry. */}
+ <div class="mt-8 inline-flex items-center gap-4 sm:gap-5 rounded-2xl bg-white/85 backdrop-blur ring-1 ring-brand-200 shadow-card px-5 py-4 sm:px-6 sm:py-5">
+ <div class="flex -space-x-2.5">
+ <span class="grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-full bg-brand-500 text-white font-display font-bold text-xs sm:text-sm ring-2 ring-white" aria-hidden="true">SM</span>
+ <span class="grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-full bg-brand-700 text-white font-display font-bold text-xs sm:text-sm ring-2 ring-white" aria-hidden="true">JR</span>
+ <span class="grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-full bg-brand-400 text-white font-display font-bold text-xs sm:text-sm ring-2 ring-white" aria-hidden="true">AB</span>
+ <span class="grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-full bg-brand-800 text-white font-display font-bold text-[10px] sm:text-xs ring-2 ring-white" aria-hidden="true">+2.5k</span>
+ </div>
+ <div class="leading-tight">
+ <div class="font-display font-bold text-3xl sm:text-4xl text-brand-500">
+ <span data-fty-count="2500" data-fty-suffix="+">0+</span>
+ </div>
+ <div class="text-[10px] sm:text-xs uppercase tracking-[0.18em] font-bold text-brand-800 mt-0.5">Happy Oklahoma Families</div>
+ <div class="text-[10px] sm:text-xs text-ink/55 mt-0.5">Served across the OKC metro since 2018</div>
+ </div>
+ </div>
+
+ {/* Count-up animation on viewport entry. Runs once per element. */}
+ <script is:inline>
+ (function () {
+ const els = document.querySelectorAll('[data-fty-count]');
+ if (!els.length) return;
+ const io = new IntersectionObserver((entries) => {
+ entries.forEach((e) => {
+ if (!e.isIntersecting) return;
+ const el = e.target;
+ const target = parseInt(el.dataset.ftyCount, 10) || 0;
+ const suffix = el.dataset.ftySuffix || '';
+ const dur = 1600;
+ const start = performance.now();
+ const tick = (now) => {
+ const p = Math.min(1, (now - start) / dur);
+ const eased = 1 - Math.pow(1 - p, 3);
+ el.textContent = Math.round(target * eased).toLocaleString() + suffix;
+ if (p < 1) requestAnimationFrame(tick);
+ };
+ requestAnimationFrame(tick);
+ io.unobserve(el);
+ });
+ }, { threshold: 0.4 });
+ els.forEach((el) => io.observe(el));
+ })();
+ </script>
  </div>
 
  <div class="relative">
