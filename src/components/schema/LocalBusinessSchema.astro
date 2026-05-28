@@ -59,11 +59,6 @@ const schema = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Click-Lock Vinyl (LVP) Installation' } },
     ],
   },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    reviewCount: '187',
-  },
 };
 ---
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />

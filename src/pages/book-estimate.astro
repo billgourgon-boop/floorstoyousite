@@ -1,5 +1,6 @@
 ---
 import FunnelLayout from '../layouts/FunnelLayout.astro';
+import GoogleReviewsBadge from '../components/GoogleReviewsBadge.astro';
 
 const title = 'Grab Your Appointment Time · Floors To You OKC';
 const description = 'Pick the time that works for you. Free in-home flooring estimate across the OKC metro - lowest price guaranteed.';
@@ -15,10 +16,8 @@ const description = 'Pick the time that works for you. Free in-home flooring est
 
       {/* Centered hero copy - same voice as the survey landing page. */}
       <div class="max-w-3xl mx-auto text-center">
-        <div class="inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur ring-1 ring-brand-200 px-4 py-1.5 mb-5 shadow-card">
-          <span class="text-brand-500 text-sm" aria-hidden>★★★★★</span>
-          <span class="text-xs sm:text-sm font-semibold text-brand-800">4.9 / 5 from 187+ OKC Homeowners</span>
-        </div>
+        <GoogleReviewsBadge class="mb-5" label="Reviewed by OKC Homeowners" />
+
 
         <p class="text-[10px] sm:text-xs uppercase tracking-[0.28em] text-brand-700 font-bold mb-3">Final Step · You're Almost Done</p>
 
